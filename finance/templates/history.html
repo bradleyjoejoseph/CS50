@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dict_item in stonks %}
+        <tr>
+           {% for key, value in dict_item.items() %}
+
+               <td>{{value}}</td>
+
+
+           {% endfor %}
+        </tr>
+
+        {% endfor %}
+                {% for dict_item in cash %}
+        <tr>
+            {% for key, value in dict_item.items() %}
+                <td><b>CASH</b></td>
+                <td></td>
+                <td></td>
+                <td>{{value}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfooter>
+        {%for dict_item in total%}
+        <tr>
+            {%for key, value in dict_item.items()%}
+            <td><b>TOTAL</b></td>
+            <td></td>
+            <td></td>
+            <td>{{value | usd}}</td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+    </tfooter>
+</table>
+{% endblock %}

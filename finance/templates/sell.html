@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+<form action="/sell" method="post">
+    <div class="form-group">
+        <select class="form-control" name="symbol">
+            <option disabled selected value="">SYMBOL</option>
+            {% for dict_item in symbols %}
+            {% for key, value in dict_item.items() %}
+                <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <input class="form-control" min="0" placeholder="Shares" type="number" name="shares" type="number">
+    </div>
+    <button class="btn btn-primary" type="submit">Sell</button>
+</form>
+{% endblock %}
