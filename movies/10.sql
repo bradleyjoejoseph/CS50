@@ -1,0 +1,1 @@
+select name from people inner join directors on people.id=directors.person_id inner join movies on directors.movie_id=movies.id inner join ratings on movies.id=ratings.movie_id where rating >= 9;

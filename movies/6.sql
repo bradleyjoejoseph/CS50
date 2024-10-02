@@ -1,0 +1,1 @@
+select round(avg(rating), 2) - 0.01 from ratings where (select id from movies where year = 2012);
