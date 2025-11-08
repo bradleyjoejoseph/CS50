@@ -1,0 +1,15 @@
+{% extends "welcomeLayout.html" %}
+
+{%block title%}Welcome{%endblock%}
+{%block page%}Welcome{%endblock%}
+
+{% block body %}
+
+    <h3>Welcome to The Infinity Network!</h3>
+    <main>
+        Play games like Infinite Spinner, Blackjack, CPS Master. Ask questions, train your aim. And lots more!<br>
+        We already have <b class="text-warning">{{count}}</b> players already!
+        <h2><a class="text-warning" href="/login">Log in</a> or <a class="text-warning" href="/register">register</a> now to start playing!</h2><br><br><br><br><br>
+    </main>
+
+{% endblock %}
