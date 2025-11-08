@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            function correct()
+            {
+                document.getElementById("display").style.visibility = "visible";
+                document.getElementById("display").innerHTML = "Correct!";
+
+                document.getElementById("correctOne").style.backgroundColor = "green";
+                document.getElementById("display").style.color = "green";
+            }
+
+            function wrongOne()
+            {
+                document.getElementById("display").style.visibility = "visible";
+                document.getElementById("display").innerHTML = "Incorrect!";
+
+                document.getElementById("wrongOne").style.backgroundColor = "red";
+                document.getElementById("display").style.color = "red";
+            }
+            function wrongTwo()
+            {
+                document.getElementById("display").style.visibility = "visible";
+                document.getElementById("display").innerHTML = "Incorrect!";
+
+                document.getElementById("wrongTwo").style.backgroundColor = "red";
+                document.getElementById("display").style.color = "red";
+            }
+            function wrongThree()
+            {
+                document.getElementById("display").style.visibility = "visible";
+                document.getElementById("display").innerHTML = "Incorrect!";
+
+                document.getElementById("wrongThree").style.backgroundColor = "red";
+                document.getElementById("display").style.color = "red";
+            }
+            function wrongFour()
+            {
+                document.getElementById("display").style.visibility = "visible";
+                document.getElementById("display").innerHTML = "Incorrect!";
+
+                document.getElementById("wrongFour").style.backgroundColor = "red";
+                document.getElementById("display").style.color = "red";
+            }
+
+            function checker()
+            {
+                let input = document.getElementById("responseText");
+                if (input.value == "Trivia")
+                {
+                    input.style.backgroundColor = "green";
+                    document.getElementById("displayTwo").innerHTML = "Correct!";
+
+                }
+                else
+                {
+                    input.style.backgroundColor = "red";
+                    document.getElementById("displayTwo").innerHTML = "Incorrect!";
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What problem set is this Trivia made for?</h3>
+
+                <button onclick="wrongOne()" id="wrongOne" type="button">Problem set 4</button>
+                <button onclick="wrongTwo()" id="wrongTwo" type="button">Problem set 5</button>
+                <button onclick="correct()" id="correctOne" type="button">Problem set 8</button>
+                <button onclick="wrongThree()" id="wrongThree" type="button">Problem set 6</button>
+                <button onclick="wrongFour()" id="wrongFour" type="button">Problem set 3</button>
+                <p style="visibility: hidden;" id="display"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>What is the name of this lab?</h3>
+                    <input autocomplete="off" type="text" id="responseText" >
+
+                    <input onclick="checker()" type="submit" value="Check Answer">
+                    <p id="displayTwo"></p>
+            </div>
+
+        </div>
+    </body>
+</html>
